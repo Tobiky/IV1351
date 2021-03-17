@@ -29,21 +29,6 @@ CREATE TABLE instrument_product
     FOREIGN KEY ("instrument_id") REFERENCES instrument ("id") ON DELETE CASCADE
 );
 
-CREATE TABLE instrument_type
-(
-    "id"   SERIAL PRIMARY KEY NOT NULL,
-    "type" VARCHAR(30)        NOT NULL
-);
-
-CREATE TABLE instrument_type_instrument
-(
-    "instrument_type_id" INT NOT NULL,
-    "instrument_id"      INT NOT NULL,
-    PRIMARY KEY ("instrument_id", "instrument_type_id"),
-    FOREIGN KEY ("instrument_type_id") REFERENCES instrument_type ("id") ON DELETE CASCADE,
-    FOREIGN KEY ("instrument_id") REFERENCES instrument ("id") ON DELETE CASCADE
-);
-
 CREATE TABLE location
 (
     "address_id" SERIAL PRIMARY KEY NOT NULL,
